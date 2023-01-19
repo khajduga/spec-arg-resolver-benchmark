@@ -13,7 +13,7 @@ import static java.util.Map.entry;
 import static java.util.Map.ofEntries;
 import static net.kaczmarzyk.spring.data.jpa.utils.SpecificationBuilder.specification;
 
-abstract class ParametersBenchmarkBase {
+abstract class SpecificationBuilderParametersBenchmarkBase {
 
 	// Please remember to also add new parameter to your interface with defined specifications
 	private static final SortedMap<String, String> PARAMETERS_WITH_VALUES = new TreeMap<>(ofEntries(

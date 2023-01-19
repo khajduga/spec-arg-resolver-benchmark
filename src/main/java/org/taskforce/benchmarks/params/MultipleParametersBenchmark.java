@@ -9,7 +9,7 @@ import org.springframework.data.jpa.domain.Specification;
 
 import java.util.concurrent.TimeUnit;
 
-public class MultipleParametersBenchmark extends ParametersBenchmarkBase {
+public class MultipleParametersBenchmark extends SpecificationBuilderParametersBenchmarkBase {
 
 	@Benchmark
 	@BenchmarkMode(Mode.AverageTime)

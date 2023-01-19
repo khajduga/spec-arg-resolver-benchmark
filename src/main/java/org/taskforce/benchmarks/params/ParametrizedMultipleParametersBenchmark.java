@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 import static net.kaczmarzyk.spring.data.jpa.web.annotation.MissingPathVarPolicy.IGNORE;
 
 @State(Scope.Benchmark)
-public class ParametrizedMultipleParametersBenchmark extends ParametersBenchmarkBase {
+public class ParametrizedMultipleParametersBenchmark extends SpecificationBuilderParametersBenchmarkBase {
 
 	@Param({"0", "1", "3", "6", "9", "12", "15"})
 	private int argumentsAmount;
@@ -56,7 +56,7 @@ public class ParametrizedMultipleParametersBenchmark extends ParametersBenchmark
 	@Warmup(time = 500, timeUnit = TimeUnit.MILLISECONDS, iterations = 10)
 	@Measurement(time = 50, timeUnit = TimeUnit.MILLISECONDS, iterations = 10)
 	@Fork(5)
-	public void measureBuildingSpecWithJsonPaths(Blackhole blackhole) {
+	public void measureBuildingSpecWithMultipleJsonPaths(Blackhole blackhole) {
 		MultipleJsonPathsSpecification specification = jsonPathsSpecification(MultipleJsonPathsSpecification.class, argumentsAmount);
 		blackhole.consume(specification);
 	}
